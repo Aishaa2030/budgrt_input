@@ -12,11 +12,13 @@ npm run dev
 
 ## نشر المشروع على GitHub Pages
 
-1. ارفع المشروع إلى مستودع GitHub.
-2. تأكد أن الفرع الافتراضي هو `main`.
-3. في إعدادات المستودع، افتح `Pages` واختر `GitHub Actions` كـ Source.
-4. سيتم نشر التطبيق تلقائياً عبر ملف Workflow التالي:
-   - `.github/workflows/deploy.yml`
+1. نفّذ `npm run build` من مجلد `frontend`.
+2. انسخ محتويات `frontend/dist` إلى جذر المستودع.
+3. ادفع التغييرات إلى الفرع `main`.
+4. في إعدادات المستودع، افتح `Pages` واختر `main` ومجلد `/(root)` كمصدر للنشر.
+
+يُنشر التطبيق على:
+`https://aishaa2030.github.io/budgrt_input/`
 
 ## البناء للإنتاج
 
@@ -25,4 +27,4 @@ cd frontend
 npm run build
 ```
 
-الملف الناتج يكون داخل مجلد `dist`، وهو ما يستهلكه GitHub Actions للنشر.
+الملفات الناتجة تكون داخل مجلد `dist`. يجب نسخ محتويات هذا المجلد إلى جذر المستودع حتى يجد GitHub Pages ملف `index.html`.
